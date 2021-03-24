@@ -19,7 +19,7 @@ mkdir -p /etc/skel/.cronjobs/startup
 mkdir -p /etc/periodic/startup
 
 ## add screen autoconnect
-cat <<EOF > /etc/skel/.bash_profile
+cat <<EOF > /etc/skel/.profile
 # test if you are not in screen session, then reattaches first available or creates new session
 if [ -z "$STY" ]; then screen -RR; fi
 EOF
