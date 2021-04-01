@@ -6,7 +6,7 @@ read newuser
 
 ## add programs
 apt update && apt upgrade
-apt install curl htop nano screen sudo vlan
+apt install curl htop nano screen sudo vlan -y
 
 ## setup skel and cron folders
 mkdir -p /etc/skel/
