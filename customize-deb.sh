@@ -67,7 +67,7 @@ usermod -aG sudo $newuser
 
 
 ## execute as new user
-su $newuser -c "cd ~; curl -sSL https://raw.githubusercontent.com/NiiWiiCamo/ssh/master/get-keys.bash | tee ~/.cronjobs/4aday/get-ssh-keys | tee ~/.cronjobs/startup/get-ssh-keys | bash; chmod +x ~/.cronjobs/periodic/4aday/*; chmod +x ~/.cronjobs/startup/*; crontab ~/usercron; rm ~/usercron"
+su $newuser -c "cd ~ && curl -sSL https://raw.githubusercontent.com/NiiWiiCamo/ssh/master/get-keys.bash | tee ~/.cronjobs/4aday/get-ssh-keys | tee ~/.cronjobs/startup/get-ssh-keys | bash && chmod +x ~/.cronjobs/4aday/*; chmod +x ~/.cronjobs/startup/*; crontab ~/usercron && rm ~/usercron"
 
 ## setup sshd_config
 sed -i 's/\#PermitRootLogin prohibit-password/PermitRootLogin no/g' /etc/ssh/sshd_config
