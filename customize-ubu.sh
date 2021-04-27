@@ -30,6 +30,10 @@ mkdir -p ~/.cronjobs/startup
 ## add screen autoconnect
 sudo bash -c '
 cat <<EOF > /etc/skel/.profile
+# check for interactive session (scp fix)
+if [ -z "$PS1" ]; then
+return
+fi
 # check for default screen, create if necessary
 if screen -ls | grep -q "default"; then
 echo "default screen found. connecting..."
