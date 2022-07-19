@@ -3,7 +3,7 @@
 ## add programs
 sudo bash -c '
 apt update && apt upgrade -y
-apt install curl htop nano screen sudo vlan -y
+apt install curl htop nano screen sudo systemd-cron -y
 '
 
 ## setup skel and cron folders
